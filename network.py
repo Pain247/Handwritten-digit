@@ -43,7 +43,7 @@ model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=10, batch_s
 #Evaluation of the model
 scores = model.evaluate(X_test, y_test, verbose=0)
 print scores
-predictions = [float(round(x)) for x in model.predict(X_train)]
+predictions = model.predict(X_train)
 print predictions
 print("Baseline Error: %.2f%%" % (100-scores[1]*100))
 print("Baseline Accuracy: %.2f%%" % (scores[1]*100))
